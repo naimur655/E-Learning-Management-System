@@ -8,6 +8,7 @@
     <body>
 
     <a href="#" class="logout-btn">Logout</a>
+    <a href= "#" class="notification">notification</a>
 
     <div class="dashboard-container">
      
