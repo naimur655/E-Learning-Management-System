@@ -19,4 +19,4 @@
           <li><a href="grades.php">View Grades & Progress</a></li>
         </ul>
     </body>
-</head>
+</html>
