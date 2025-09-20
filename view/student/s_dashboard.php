@@ -3,7 +3,7 @@
     <head>
         <title>Student Dashboard</title>
         <script src="Script.js" defer></script>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
 
