@@ -1,3 +1,18 @@
+
+<?php
+session_start();
+    if (!isset($_SESSION["username"]) || $_SESSION["Role"] != 3) {
+        header("Location:../login.php");
+        exit;
+    }
+
+    else
+    {
+       
+    }
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,7 +22,8 @@
     </head>
     <body>
 
-    <a href="#" class="logout-btn">Logout</a>
+
+    <a href='../logout.php' class="logout-btn">logout</a>
     <a href="#" class="notification">notification</a>
     
     <nav class="main-menu">
@@ -21,8 +37,7 @@
     
     <div class="content-container">
        <h3> Student Dashboard</h3>
-       <p>Welcome to your dashboard. Use the menu above to navigate.</p>
-
+       <?php echo "<h1>Welcome  ".$_SESSION["username"]."</h1><br>";?>
        <table class="routine-table">
             <caption>Today's Routine</caption>
             <thead>
