@@ -6,7 +6,10 @@
     $username = "";
     $password = "";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
 
         if (empty($_POST["username"])) {
             $userNameErr = "User name cannot be empty";
@@ -35,6 +38,13 @@
                 session_start();
                 $_SESSION["username"] = $returnedValue["Username"];
                 $_SESSION["Role"] = $returnedValue["Role"];
+
+
+                $conn = getConnection();
+                $currentDate = date("Y-m-d H:i:s");
+                $userId = $returnedValue["User_Id"];
+                $sql = "UPDATE user SET LastLoginDate = '$currentDate' WHERE User_Id = $userId";
+                mysqli_query($conn, $sql);
 
                 if ($returnedValue["Role"] == 1) {
                     header("Location:../view/admin/a_dashboard.php");
